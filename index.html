@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />    
+
+    <!-- CSS (load bootstrap) -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <style>
+        .navbar { border-radius:0; }
+    </style>
+    
+</head>
+
+<!-- Apply our angular app to our site -->
+<body ng-app="app">
+
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" ui-sref="home">Home</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a ui-sref="home">Home</a></li>
+            <li><a ui-sref="cars">Cars</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+
+        <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT -->
+        <div ui-view></div>
+
+    </div>
+
+
+    <!-- JS (load angular, ui-router, and our custom js file) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+
+    <!-- Our modules -->
+    <script src="app/home/homeModule.js"></script>
+    <script src="app/cars/carsModule.js"></script>
+
+    <!-- Environment config -->
+    <script src="app/environment/environment.js"></script>
+
+    <!-- Services -->
+    <script src="app/cars/services/carServices.js"></script>
+
+    <!-- Controllers -->
+    <script src="app/home/controllers/homeController.js"></script>
+    <script src="app/cars/controllers/carController.js"></script>
+
+    <!-- Routers -->
+    <script src="app/home/config/route.js"></script>
+    <script src="app/cars/config/route.js"></script>
+    
+    <script src="app.js"></script>
+    
+</body>
+</html>
